@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summary Generator</title>
+<!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/st.css') }}"> -->
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">Summary Generator</div>
+  </nav>
+</header>
+
+<main>
+  <form action="content" method="post">
+    <section id="generator">
+      <div class="container">
+        <textarea id="input-text" placeholder="Enter your text here..." name="text"></textarea>
+
+        <div>
+          <label for="model-select">Choose a summarization model:</label>
+          <select id="model-select" name="model">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="azure">Microsoft Azure</option>
+            <option value="mb">Meta Bart</option>
+            <option value="fa">Falcon AI</option>
+          </select>
+        </div>
+
+        <div id="summary-result">{{ summary_text }}</div>
+      </div>
+      <button id="generate-btn" type="submit">Generate Summary</button>
+    </section>
+  </form>
+</main>
+
+<footer>
+  <p>© 2024 Summary Generator. All rights reserved.</p>
+</footer>
+</body>
+</html>
